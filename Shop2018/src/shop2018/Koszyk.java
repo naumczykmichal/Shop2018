@@ -22,6 +22,10 @@ public class Koszyk {
         }
         return sum;
     }
+    public String toString()
+    {
+        return lista.toString()+"Razem do Zapłaty:"+doZaplaty();
+    }
     
     
 }
