@@ -12,8 +12,18 @@ public class Koszyk {
     private Map<Produkt,Integer> map=new HashMap();
     public void dodaj(Produkt p)
     {
+        if(map.containsKey(p))
+        {
+            int i=map.get(p);
+            i++;
+            map.put(p, i);
+          
+        }
+        else
+        {
+            
         map.put(p,1);
-    }
+    }}
     
     public BigDecimal doZaplaty()
     {
