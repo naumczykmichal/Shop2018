@@ -38,6 +38,7 @@ public class Cart {
         }
         return sum;
     }
+    @Override
     public String toString()
     {
         return map.toString()+"Razem do Zapłaty:"+toPay();
