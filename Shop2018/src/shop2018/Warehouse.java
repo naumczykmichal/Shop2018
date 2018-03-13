@@ -27,6 +27,13 @@ public class Warehouse {
     products.add(new Product ("śmietana",new BigDecimal("1.5")));
     
     }
+    
+    public Collection<Product> productsAvailable()
+    {
+        
+        //Sprawdzenie dostepnych produktow
+   return null;
+    }
     public Collection<Product> productsSortedByName()
     {
        TreeSet<Product> set =new TreeSet();
@@ -47,6 +54,13 @@ public class Warehouse {
         //znalezc odpowiedni produkt
         //w tym obiekcie zmniejszyc ilosc o jeden
         // dwie petle 
+        
+        
+        
+        
+        
+        
+        
     }
     @Override
     public String toString(){
