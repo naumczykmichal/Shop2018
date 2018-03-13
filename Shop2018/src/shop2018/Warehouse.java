@@ -41,7 +41,10 @@ public class Warehouse {
        set.addAll(products);
        return set;
     }
-    
+    public void doOrder(Cart cart)
+    {
+       
+    }
     @Override
     public String toString(){
         return products.toString();
