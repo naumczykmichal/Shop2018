@@ -43,7 +43,10 @@ public class Warehouse {
     }
     public void doOrder(Cart cart)
     {
-       
+       //przejrzec z koszyka
+        //znalezc odpowiedni produkt
+        //w tym obiekcie zmniejszyc ilosc o jeden
+        // dwie petle 
     }
     @Override
     public String toString(){
