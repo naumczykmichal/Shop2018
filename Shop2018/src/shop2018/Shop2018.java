@@ -12,24 +12,25 @@ public class Shop2018 {
     public static void main(String[] args) {
 
         
-       Produkt chleb =new Produkt("chleb",new BigDecimal("2.2"));
-       Produkt maslo=new Produkt("maslo",new BigDecimal("6.15"));
-       Produkt mleko=new Produkt("mleko",new BigDecimal("1.9"));
-       Produkt jogurt =new Produkt("jogurt",new BigDecimal("0.95"));
+       Product chleb =new Product("chleb",new BigDecimal("2.2"));
+       Product maslo=new Product("maslo",new BigDecimal("6.15"));
+       Product mleko=new Product("mleko",new BigDecimal("1.9"));
+       Product jogurt =new Product("jogurt",new BigDecimal("0.95"));
        
        
-       Koszyk koszyk = new Koszyk();
-       koszyk.dodaj(chleb);
-       koszyk.dodaj(maslo);
-       koszyk.dodaj(mleko);
-       koszyk.dodaj(jogurt);
-       koszyk.dodaj(jogurt);
+       Cart koszyk = new Cart();
+       koszyk.add(chleb);
+       koszyk.add(maslo);
+       koszyk.add(mleko);
+       koszyk.add(jogurt);
+       koszyk.add(jogurt);
        
        System.out.println();
-       System.out.println("Cena wynosi:"+koszyk.doZaplaty()+"zł");
+       System.out.println("Cena wynosi:"+koszyk.toPay()+"zł");
        
        System.out.println(koszyk);
                
+       
        
        
 

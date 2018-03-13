@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Koszyk {
+public class Cart {
     //private List<Produkt> lista = new ArrayList();
-    private Map<Produkt,Integer> map=new HashMap();
-    public void dodaj(Produkt p)
+    private Map<Product,Integer> map=new HashMap();
+    public void add(Product p)
     {
         if(map.containsKey(p))
         {
@@ -25,14 +25,14 @@ public class Koszyk {
         map.put(p,1);
     }}
     
-    public BigDecimal doZaplaty()
+    public BigDecimal toPay()
     {
         BigDecimal sum = new BigDecimal(0);
-        for(Produkt p : map.keySet())
+        for(Product p : map.keySet())
         {
             int ilosc=map.get(p);
             sum=sum.
-                    add(p.getCena()
+                    add(p.getPrice()
                     .multiply(new BigDecimal(ilosc)));
             
         }
@@ -40,7 +40,7 @@ public class Koszyk {
     }
     public String toString()
     {
-        return map.toString()+"Razem do Zapłaty:"+doZaplaty();
+        return map.toString()+"Razem do Zapłaty:"+toPay();
     }
     
     
