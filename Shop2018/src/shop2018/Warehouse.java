@@ -30,9 +30,11 @@ public class Warehouse {
     
     public Collection<Product> productsAvailable()
     {
-        
-        //Sprawdzenie dostepnych produktow
-   return null;
+     	TreeSet<Product> set = new TreeSet<>();
+        for(Product pr: products)
+            if(pr.getCount()>0)
+                set.add(pr);
+        return set;
     }
     public Collection<Product> productsSortedByName()
     {
