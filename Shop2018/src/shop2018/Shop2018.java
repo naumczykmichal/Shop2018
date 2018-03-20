@@ -34,6 +34,11 @@ public class Shop2018 {
        System.out.println(w);
        w.doOrder(koszyk);
        System.out.println(w);
+       System.out.println("PRACA DOMOWA -------");
+       
+         w.getItems("mleko ").setCount(0);
+        System.out.println(w.productsAvailable());
+        
        
        
        

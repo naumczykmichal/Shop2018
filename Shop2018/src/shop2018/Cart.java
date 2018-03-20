@@ -1,48 +1,63 @@
 package shop2018;
 
+
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
 public class Cart {
-    //private List<Produkt> lista = new ArrayList();
-    private Map<Product,Integer> map=new HashMap();
-    public void add(Product p)
-    {
-        if(map.containsKey(p))
-        {
-            int i=map.get(p);
-            i++;
-            map.put(p, i);
-          
+    private Map<Product, Integer> list = new HashMap<>();
+    public void dodaj(Product p) {
+        if(list.containsKey(p)) {
+        int integ = list.get(p);
+        list.put(p, integ+1);
         }
         else
-        {
-            
-        map.put(p,1);
-    }}
-    
-    public BigDecimal toPay()
-    {
-        BigDecimal sum = new BigDecimal(0);
-        for(Product p : map.keySet())
-        {
-            int ilosc=map.get(p);
-            sum=sum.
-                    add(p.getPrice()
-                    .multiply(new BigDecimal(ilosc)));
-            
+        list.put(p, 1);
+    }
+    public BigDecimal toPay() {
+        BigDecimal sum= new BigDecimal("0");
+        for(Product p: list.keySet()){
+            int integ = list.get(p);
+            sum = sum.add(p.getPrice().multiply(BigDecimal.valueOf(integ)));
         }
         return sum;
     }
-    @Override
-    public String toString()
-    {
-        return map.toString()+"Razem do Zapłaty:"+toPay();
+    public int getCount(Product p){
+    	return list.get(p);
+    }
+    public int getItems(){
+    	return 0;
+    }
+    public void add(Product p) {
+    	
+    	if(list.containsKey(p)) {
+    		int integ=list.get(p);
+    		list.put(p, integ++);
+    	}
+    	else
+    		list.put(p, 1);
     }
     
+    @Override
     
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for(Product p: list.keySet()){
+            int integ = list.get(p);
+             s.append(p.getName());
+             s.append(", price: ");
+             s.append(p.getPrice());
+             s.append(" x ");
+             s.append(integ);
+             s.append(" = ");
+             s.append(p.getPrice().multiply(BigDecimal.valueOf(integ)));
+             s.append("\n");
+        }
+        s.append("Total: ");
+        s.append(toPay());
+        return s.toString();
+    }
 }
